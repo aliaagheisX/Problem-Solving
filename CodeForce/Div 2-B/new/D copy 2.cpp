@@ -18,14 +18,18 @@ int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
 
+    int arr[10] = {6, 2, 5, 5, 4, 5, 6, 3, 7, 6};  
+  
     int t,n;
     cin >> t;
 
-    cin >> n;
-    int arr[n];
-    for(int i = 0;i < n;i++) cin >> arr[i];
-    
     while(t--) {
+        cin >> n;
+        ll count = 0;
+        for(int i = 9;i >= 0;i--) {
+            count += floor(n / (float)arr[i]) * i;
+        }
+        cout << "1 " << count << '\n';
 
     }
 

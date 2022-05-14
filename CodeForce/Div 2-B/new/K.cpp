@@ -17,17 +17,20 @@ int main() {
 
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
+    FILE * f = freopen("max-pair.in", "r", stdin);
+    int t = 5,n;
+    string s;
 
-    int t,n;
-    cin >> t;
-
-    cin >> n;
-    int arr[n];
-    for(int i = 0;i < n;i++) cin >> arr[i];
+    
+    cin >> t ;
     
     while(t--) {
-
+        cin >> s;
+        int i = s.size() - 1;
+        for(;i >= 0;i--) if(s[i] != s[0]) break;
+        cout << i<< '\n';
     }
+    fclose(f);
 
     return 0;
 }

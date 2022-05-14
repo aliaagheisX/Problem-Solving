@@ -20,23 +20,17 @@ int main() {
 
     int n,m;
     cin >> n >> m;
-    
-    char c;
-    v<bool> arr(1015, false);
-    int ans = 0;
+    string s;
+    set<int>count;
     for(int i = 0;i < n;i++) {
-        int Gpos,Spos;
-        for(int j = 0;j < m;j++){
-            cin >> c;
-            if(c == 'G') Gpos = j;
-            else if(c == 'S') Spos = j;
-        }
-        int maxSteps = Spos-Gpos;
-        if(maxSteps <= 0) {cout << -1;return 0;}
-        if(!arr[maxSteps])
-            arr[maxSteps] = true,ans++;
+        cin >> s;
+        int G = s.find('G');
+        int S = s.find('S');
+        if(G < S) count.insert(S-G);
+        else {cout << -1 ;return 0;}
+        
     }
-    if(ans == 0) cout << -1;
-    else cout << ans;
+    if(count.size() == 0) cout << -1;
+    else cout << count.size();
     return 0;
 }
